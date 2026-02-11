@@ -1,0 +1,330 @@
+.card-detail.theme-starwars .vader-scene {
+  --noise:
+    radial-gradient(circle at 18% 12%, rgba(255, 255, 255, 0.9) 1px, transparent 2px),
+    radial-gradient(circle at 72% 24%, rgba(255, 255, 255, 0.75) 1px, transparent 2px),
+    radial-gradient(circle at 38% 68%, rgba(255, 255, 255, 0.8) 1px, transparent 2px),
+    radial-gradient(circle at 85% 74%, rgba(255, 255, 255, 0.65) 1px, transparent 2px);
+  display: block;
+  margin-top: 24px;
+  min-height: 220px;
+  border-radius: 14px;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 8% 20%, rgba(255, 255, 255, 0.88) 1.2px, transparent 2px),
+    radial-gradient(circle at 16% 40%, rgba(255, 255, 255, 0.62) 1.4px, transparent 2px),
+    radial-gradient(circle at 28% 16%, rgba(255, 255, 255, 0.75) 1.2px, transparent 2px),
+    radial-gradient(circle at 38% 54%, rgba(255, 255, 255, 0.7) 1.5px, transparent 2px),
+    radial-gradient(circle at 47% 23%, rgba(255, 255, 255, 0.85) 1.2px, transparent 2px),
+    radial-gradient(circle at 58% 10%, rgba(255, 255, 255, 0.58) 1.4px, transparent 2px),
+    radial-gradient(circle at 67% 34%, rgba(255, 255, 255, 0.8) 1.1px, transparent 2px),
+    radial-gradient(circle at 80% 18%, rgba(255, 255, 255, 0.74) 1.3px, transparent 2px),
+    radial-gradient(circle at 92% 28%, rgba(255, 255, 255, 0.8) 1.1px, transparent 2px),
+    radial-gradient(circle at 78% 68%, rgba(255, 255, 255, 0.64) 1.3px, transparent 2px),
+    linear-gradient(180deg, #0c0f1e, #020308);
+}
+
+.card-detail.theme-starwars .starcruiser {
+  height: 100%;
+  aspect-ratio: 8 / 3.5;
+  background-image: linear-gradient(#5553 20%, #9f7f0733 80%);
+  clip-path: polygon(0% 59%, 8% 50%, 11% 50%, 15% 45%, 21% 40%, 26% 35%, 43% 36%, 60% 27%, 75% 28%, 77% 22%, 57% 8%, 57% 0, 89% 0%, 95% 7%, 96% 1%, 100% 0%, 100% 29%, 94% 27%, 93% 36%, 100% 44%, 100% 100%, 0% 100%);
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0.35;
+}
+
+.card-detail.theme-starwars .vader {
+  --shine: #914a02;
+  --transparent-shine: #914a0288;
+  width: 460px;
+  height: 390px;
+  position: absolute;
+  right: 28px;
+  bottom: -6px;
+  transform: scale(0.5);
+  transform-origin: bottom right;
+  pointer-events: none;
+}
+
+.card-detail.theme-starwars .vader .head {
+  width: 300px;
+  height: 270px;
+  position: absolute;
+  left: 75px;
+}
+
+.card-detail.theme-starwars .vader .head .helmet {
+  width: 204px;
+  height: 260px;
+  background-color: #000;
+  background-image: radial-gradient(circle at center -35px, var(--transparent-shine) 7%, transparent 42%);
+  box-shadow: inset 2px 3px 8px var(--transparent-shine);
+  position: absolute;
+  top: 8px;
+  left: 46px;
+  border-radius: 40% 40% 30% 30% / 30% 30% 30% 30%;
+}
+
+.card-detail.theme-starwars .vader .head .helmet::after {
+  content: "";
+  width: 28px;
+  height: 128px;
+  border-radius: 4px 4px 20px 20px;
+  background-color: #000;
+  position: absolute;
+  left: 86px;
+  top: -8px;
+  box-shadow: inset 2px 1px 6px var(--shine), inset -2px 1px 6px var(--shine), inset 0 -15px 6px -4px var(--shine);
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
+}
+
+.card-detail.theme-starwars .vader .head .helmet::before {
+  content: "";
+  width: 300px;
+  height: 180px;
+  border-radius: 0 0 50% 50% / 0 0 20% 20%;
+  clip-path: polygon(0 100%, 0 80%, 16% 0, 83% 0, 100% 80%, 100% 100%);
+  background-color: #000;
+  background-image: linear-gradient(106deg, var(--shine) 11%, transparent 15%), linear-gradient(-106deg, var(--shine) 11%, transparent 16%);
+  position: absolute;
+  left: -46px;
+  bottom: -2px;
+}
+
+.card-detail.theme-starwars .vader .head .eye {
+  width: 68px;
+  height: 46px;
+  border-radius: 48% 33% 25% 46% / 62% 60% 25% 27%;
+  background-color: #111;
+  box-shadow: 0 8px 3px -6px #000, 0 10px 5px -5px var(--shine);
+  position: absolute;
+  top: 114px;
+  left: 66px;
+  overflow: hidden;
+}
+
+.card-detail.theme-starwars .vader .head .eye .fire {
+  transform: scaleY(1.6);
+}
+
+.card-detail.theme-starwars .vader .head .eye .shine {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  border-radius: 48% 33% 25% 46% / 62% 60% 25% 27%;
+  box-shadow: inset 1px 4px 6px var(--shine);
+  background: radial-gradient(circle at 80% 80%, var(--transparent-shine) 25%, transparent 32%);
+}
+
+.card-detail.theme-starwars .vader .head .eye.right {
+  border-radius: 33% 48% 46% 25% / 60% 62% 27% 25%;
+  left: 158px;
+  box-shadow: 0 8px 3px -6px #000, 0 10px 6px -5px var(--shine);
+}
+
+.card-detail.theme-starwars .vader .head .eye.right .shine {
+  border-radius: 33% 48% 46% 25% / 60% 62% 27% 25%;
+  box-shadow: inset -1px 4px 6px var(--shine);
+  background: radial-gradient(circle at 25% 70%, var(--transparent-shine) 25%, transparent 32%);
+}
+
+.card-detail.theme-starwars .vader .head .mark {
+  width: 10px;
+  height: 3px;
+  position: absolute;
+  opacity: 0.6;
+  border-radius: 2px 2px 0 0;
+  background: var(--shine);
+  box-shadow: 0 6px 2px var(--shine), 0 12px 3px var(--shine);
+  top: 132px;
+  left: 140px;
+}
+
+.card-detail.theme-starwars .vader .head .nouse {
+  width: 24px;
+  height: 20px;
+  position: absolute;
+  border-radius: 50% 50% 20% 20% / 90% 90% 20% 20%;
+  background-color: var(--transparent-shine);
+  top: 170px;
+  left: 134px;
+  box-shadow: inset 0 5px 3px #0006, 0 0 4px 3px var(--shine);
+}
+
+.card-detail.theme-starwars .vader .head .ball {
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  border-radius: 50%;
+  background-color: var(--shine);
+  top: 232px;
+  left: 96px;
+  box-shadow: inset 0 0 8px #0009, 0 0 4px 3px var(--transparent-shine);
+}
+
+.card-detail.theme-starwars .vader .head .ball.right {
+  left: 190px;
+}
+
+.card-detail.theme-starwars .vader .head .mask {
+  width: 100px;
+  height: 63px;
+  position: absolute;
+  filter: drop-shadow(4px 0 4px var(--shine)) drop-shadow(-4px 0 4px var(--shine));
+  top: 178px;
+  left: 96px;
+  opacity: 0.7;
+}
+
+.card-detail.theme-starwars .vader .head .mask::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: var(--transparent-shine);
+  clip-path: polygon(0 100%, 36% 20%, 64% 20%, 100% 100%);
+}
+
+.card-detail.theme-starwars .vader .head .mask::after {
+  content: "";
+  width: 80%;
+  height: 85%;
+  position: absolute;
+  background: linear-gradient(90deg, #000b 11%, #0000 12% 22%, #000b 23% 33%, #0000 34% 44%, #000b 45% 55%, #0000 56% 66%, #000b 67% 77%, #0000 78% 88%, #000b 89%);
+  top: 10%;
+  left: 10%;
+  clip-path: polygon(0 100%, 36% 16%, 64% 16%, 100% 100%);
+}
+
+.card-detail.theme-starwars .vader .head .arc {
+  width: 96px;
+  height: 130px;
+  position: absolute;
+  border-radius: 50% 50% 0 0 / 60% 25% 0 0;
+  box-shadow: 0 -3px 2px -2px #000, 0 -17px 7px -7px var(--shine);
+  top: 108px;
+  left: 50px;
+  opacity: 0.8;
+}
+
+.card-detail.theme-starwars .vader .head .arc.right {
+  left: 146px;
+  transform: scaleX(-1);
+}
+
+.card-detail.theme-starwars .vader .head > .shine {
+  width: 134px;
+  height: 56px;
+  position: absolute;
+  background-image: radial-gradient(150% 100% at center 80%, transparent 80%, #000 83%), radial-gradient(circle at center 100%, transparent 60%, var(--transparent-shine) 61%);
+  opacity: 0.7;
+  clip-path: polygon(0 0, 0 10%, 15% 100%, 85% 100%, 100% 10%, 100% 0, 65% 0, 70% 40%, 31% 40%, 36% 0);
+  top: 178px;
+  left: 78px;
+}
+
+.card-detail.theme-starwars .vader .head .border {
+  height: 120px;
+  width: 10px;
+  position: absolute;
+  border-radius: 100% 0 0 100% / 40% 0 0 66%;
+  top: 120px;
+  left: 45px;
+  box-shadow: -3px 0 7px var(--shine);
+  transform: rotate(16deg);
+}
+
+.card-detail.theme-starwars .vader .head .border.right {
+  left: 237px;
+  transform: scaleX(-1) rotate(16deg);
+}
+
+.card-detail.theme-starwars .vader .neck {
+  width: 150px;
+  height: 40px;
+  position: absolute;
+  background-color: #000;
+  left: 149px;
+  top: 256px;
+  z-index: 1;
+  border-radius: 0 0 50% 50%;
+  box-shadow: inset 0 -6px 10px -3px var(--transparent-shine), inset 0 -10px 15px 0 #000, 0 4px 10px -4px var(--transparent-shine);
+}
+
+.card-detail.theme-starwars .vader .neck::after {
+  content: "";
+  width: 50px;
+  height: 18px;
+  position: absolute;
+  top: -10px;
+  left: 48px;
+  background-color: var(--shine);
+  clip-path: polygon(50% 100%, 0 0, 100% 0);
+  opacity: 0.3;
+}
+
+.card-detail.theme-starwars .vader .chest {
+  width: 480px;
+  height: 120px;
+  position: absolute;
+  background-color: #000;
+  left: -15px;
+  bottom: 0;
+  border-radius: 40% 40% 0 0 / 90% 90% 0 0;
+  background-image: radial-gradient(90% 190% at center bottom, transparent 20%, #0006 30% 40%, #000 42%), radial-gradient(130% 180% at right top, #000 38%, #0000 42%), radial-gradient(130% 180% at left top, #000 38%, #0000 42%), radial-gradient(circle at left bottom, transparent 17%, var(--transparent-shine) 18% 26%, transparent 27% 31%, var(--transparent-shine) 32% 40%, transparent 41%), radial-gradient(circle at right bottom, transparent 17%, var(--transparent-shine) 18% 26%, transparent 27% 31%, var(--transparent-shine) 32% 40%, transparent 41%), linear-gradient(90deg, transparent 47%, var(--transparent-shine) 48% 53%, transparent 54%);
+  box-shadow: inset 0 4px 8px 3px var(--transparent-shine);
+}
+
+.card-detail.theme-starwars .vader .saber {
+  width: 120%;
+  height: 16px;
+  position: absolute;
+  background-color: #fff;
+  left: 260px;
+  bottom: -40px;
+  transform: rotate(-70deg) scaleX(0);
+  transform-origin: left center;
+  z-index: 2;
+  border-radius: 0 10px 10px 0;
+  box-shadow: 0 0 20px 6px red, 0 0 100px 6px red, 0 0 16px 2px red inset;
+  animation: open-red 0.7s linear 0.5s forwards;
+}
+
+.card-detail.theme-starwars .fire {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  transform-origin: center bottom;
+  background-image: var(--noise), var(--noise), linear-gradient(0deg, #ff8951 30%, #dcbc169c 45%, transparent 80%), radial-gradient(ellipse at bottom, transparent 30%, black 80%);
+  background-size: 500px 500px, 650px 650px, 100% 100%, 100% 100%;
+  background-blend-mode: hard-light, color-dodge, multiply;
+  filter: brightness(2.3) blur(6px) contrast(8);
+  box-shadow: inset 0 -40px 50px -60px #63bbc5;
+  animation: flare 2s linear infinite;
+}
+
+@keyframes open-red {
+  from { transform: rotate(-70deg) scaleX(0); }
+  to { transform: rotate(-70deg) scaleX(1); }
+}
+
+@keyframes flare {
+  0% { background-position: center 0, center 0, 50% 100%, center center; }
+  100% { background-position: center -500px, center -650px, 50% 100%, center center; }
+}
+
+@media (max-width: 700px) {
+  .card-detail.theme-starwars .vader-scene {
+    min-height: 180px;
+  }
+
+  .card-detail.theme-starwars .vader {
+    transform: scale(0.38);
+    right: 8px;
+    bottom: -8px;
+  }
+}

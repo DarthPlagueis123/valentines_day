@@ -53,22 +53,55 @@ const showMainView = () => {
   cardsView.setAttribute("aria-hidden", "true");
 };
 
-const cardCopy = {
-  Classic: "Your full Valentine card content for this style will go here.",
-  Sweet: "Your full Valentine card content for this style will go here.",
-  Playful: "Your full Valentine card content for this style will go here.",
-  Warm: "Your full Valentine card content for this style will go here.",
-  Poetic: "Your full Valentine card content for this style will go here.",
-  Forever: "Your full Valentine card content for this style will go here.",
+const cardData = {
+  starwars: {
+    title: "Star Wars Valentine",
+    message: "Together we can rule the galaxy!",
+    theme: "theme-starwars",
+  },
+  sweet: {
+    title: "Sweet",
+    message: "Your full Valentine card content for this style will go here.",
+    theme: "",
+  },
+  playful: {
+    title: "Playful",
+    message: "Your full Valentine card content for this style will go here.",
+    theme: "",
+  },
+  warm: {
+    title: "Warm",
+    message: "Your full Valentine card content for this style will go here.",
+    theme: "",
+  },
+  poetic: {
+    title: "Poetic",
+    message: "Your full Valentine card content for this style will go here.",
+    theme: "",
+  },
+  forever: {
+    title: "Forever",
+    message: "Your full Valentine card content for this style will go here.",
+    theme: "",
+  },
 };
 
-const showCardDetail = (title) => {
+const showCardDetail = (cardKey) => {
   if (!cardsView || !detailTitle || !detailMessage || !cardDetail) {
     return;
   }
 
-  detailTitle.textContent = title;
-  detailMessage.textContent = cardCopy[title] || cardCopy.Classic;
+  const themeClasses = ["theme-starwars"];
+  cardDetail.classList.remove(...themeClasses);
+
+  const selectedCard = cardData[cardKey] || cardData.sweet;
+  detailTitle.textContent = selectedCard.title;
+  detailMessage.textContent = selectedCard.message;
+
+  if (selectedCard.theme) {
+    cardDetail.classList.add(selectedCard.theme);
+  }
+
   cardsView.classList.add("show-detail");
   cardDetail.setAttribute("aria-hidden", "false");
 };
@@ -96,7 +129,7 @@ if (backToOptionsButton) {
 
 cardOptionButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    const cardTitle = button.dataset.cardTitle || "Classic";
-    showCardDetail(cardTitle);
+    const cardKey = button.dataset.cardKey || "sweet";
+    showCardDetail(cardKey);
   });
 });

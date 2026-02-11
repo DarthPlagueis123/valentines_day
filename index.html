@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Valentine's Day - A Little Love Animation</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="vader.css" />
   </head>
   <body>
     <main class="scene" id="scene">
@@ -14,9 +15,6 @@
         <div class="stamp"></div>
         <p class="eyebrow">For you</p>
         <h1>Happy Valentine's Day</h1>
-        <p class="subhead">
-          A note carried by stars, sealed with a heartbeat.
-        </p>
         <div class="actions">
           <button class="btn btn-solid" id="replay">Replay</button>
           <button class="btn btn-outline" id="openCards">Cards</button>
@@ -46,42 +44,70 @@
         <div class="cards-head">
           <p class="eyebrow">Pick a card</p>
           <h2>Valentine Card Gallery</h2>
-          <button class="btn btn-solid" id="backHome">Back</button>
+          <div class="cards-head-actions">
+            <button class="btn btn-outline" id="backToOptions">Back to cards</button>
+            <button class="btn btn-solid" id="backHome">Back</button>
+          </div>
         </div>
         <div class="cards-grid">
-          <button class="card-option c1" data-card-title="Classic">
-            <span class="card-option-title">Classic</span>
+          <button class="card-option c1" data-card-key="starwars" data-card-title="Star Wars">
+            <span class="card-option-title">Star Wars</span>
             <span class="card-option-hint">Open full card</span>
           </button>
-          <button class="card-option c2" data-card-title="Sweet">
+          <button class="card-option c2" data-card-key="sweet" data-card-title="Sweet">
             <span class="card-option-title">Sweet</span>
             <span class="card-option-hint">Open full card</span>
           </button>
-          <button class="card-option c3" data-card-title="Playful">
+          <button class="card-option c3" data-card-key="playful" data-card-title="Playful">
             <span class="card-option-title">Playful</span>
             <span class="card-option-hint">Open full card</span>
           </button>
-          <button class="card-option c4" data-card-title="Warm">
+          <button class="card-option c4" data-card-key="warm" data-card-title="Warm">
             <span class="card-option-title">Warm</span>
             <span class="card-option-hint">Open full card</span>
           </button>
-          <button class="card-option c5" data-card-title="Poetic">
+          <button class="card-option c5" data-card-key="poetic" data-card-title="Poetic">
             <span class="card-option-title">Poetic</span>
             <span class="card-option-hint">Open full card</span>
           </button>
-          <button class="card-option c6" data-card-title="Forever">
+          <button class="card-option c6" data-card-key="forever" data-card-title="Forever">
             <span class="card-option-title">Forever</span>
             <span class="card-option-hint">Open full card</span>
           </button>
         </div>
         <section class="card-detail" id="cardDetail" aria-hidden="true">
-          <p class="eyebrow">Card preview</p>
           <h3 id="detailTitle">Classic</h3>
           <p id="detailMessage">
             Your full Valentine card content for this style will go here.
           </p>
-          <div class="card-detail-actions">
-            <button class="btn btn-outline" id="backToOptions">Back to options</button>
+          <div class="vader-scene" id="vaderScene" aria-hidden="true">
+            <div class="starcruiser"></div>
+            <div class="vader">
+              <div class="head">
+                <div class="helmet"></div>
+                <div class="eye">
+                  <div class="fire"></div>
+                  <div class="shine"></div>
+                </div>
+                <div class="eye right">
+                  <div class="fire"></div>
+                  <div class="shine"></div>
+                </div>
+                <div class="mark"></div>
+                <div class="nouse"></div>
+                <div class="ball"></div>
+                <div class="ball right"></div>
+                <div class="mask"></div>
+                <div class="arc"></div>
+                <div class="arc right"></div>
+                <div class="shine"></div>
+                <div class="border"></div>
+                <div class="border right"></div>
+              </div>
+              <div class="neck"></div>
+              <div class="chest"></div>
+              <div class="saber"></div>
+            </div>
           </div>
         </section>
       </section>
