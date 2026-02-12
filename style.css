@@ -375,6 +375,7 @@ h2 {
 
 .scene.show-cards .card-option:nth-child(2) { animation-delay: 0.05s; }
 .scene.show-cards .card-option:nth-child(3) { animation-delay: 0.1s; }
+.scene.show-cards .card-option:nth-child(4) { animation-delay: 0.15s; }
 
 .card-detail {
   display: none;
@@ -478,11 +479,31 @@ h2 {
   color: #2a2c33;
 }
 
+.card-detail.theme-hottub {
+  background: linear-gradient(165deg, #142437 0%, #0f1d2f 55%, #13324d 100%);
+  border-color: rgba(184, 216, 239, 0.28);
+  color: #f4f9ff;
+}
+
+.card-detail.theme-hottub h3 {
+  color: #cce7ff;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.card-detail.theme-hottub #detailMessage {
+  color: rgba(240, 248, 255, 0.94);
+}
+
 .pickleball-scene {
   display: none;
 }
 
 .gym-scene {
+  display: none;
+}
+
+.hottub-scene {
   display: none;
 }
 
@@ -507,6 +528,19 @@ h2 {
   overflow: hidden;
   background: linear-gradient(180deg, #fbfbfb 0%, #f2f2f2 100%);
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.9);
+  display: block;
+}
+
+.card-detail.theme-hottub .hottub-scene {
+  margin-top: 20px;
+  min-height: 360px;
+  border-radius: 16px;
+  border: 2px solid rgba(210, 232, 255, 0.28);
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 80% 85%, rgba(22, 116, 162, 0.45), transparent 45%),
+    linear-gradient(180deg, #12263b 0%, #133d60 100%);
   display: block;
 }
 
@@ -666,6 +700,178 @@ h2 {
   height: 20px;
   border-bottom: 3px solid #7e2438;
   border-radius: 0 0 20px 20px;
+}
+
+.hottub-scene .night-sky {
+  position: absolute;
+  inset: 0 0 45% 0;
+}
+
+.hottub-scene .moon {
+  position: absolute;
+  top: 26px;
+  right: 52px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #f1f6ff;
+}
+
+.hottub-scene .moon::after {
+  content: "";
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  left: 12px;
+  top: 2px;
+  background: #173047;
+}
+
+.hottub-scene .star {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #ffffff;
+  transform: rotate(45deg);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.75);
+  animation: hottubTwinkle 2.6s ease-in-out infinite;
+}
+
+.hottub-scene .star::before,
+.hottub-scene .star::after {
+  content: "";
+  position: absolute;
+  background: inherit;
+}
+
+.hottub-scene .star::before {
+  width: 12px;
+  height: 3px;
+  left: -4px;
+  top: 0.5px;
+}
+
+.hottub-scene .star::after {
+  width: 3px;
+  height: 12px;
+  left: 0.5px;
+  top: -4px;
+}
+
+.hottub-scene .hs1 { top: 24px; left: 24px; }
+.hottub-scene .hs2 { top: 30px; left: 84px; animation-delay: 0.3s; }
+.hottub-scene .hs3 { top: 18px; left: 156px; animation-delay: 0.8s; }
+.hottub-scene .hs4 { top: 52px; left: 210px; animation-delay: 1.1s; }
+.hottub-scene .hs5 { top: 76px; left: 52px; animation-delay: 0.5s; }
+.hottub-scene .hs6 { top: 82px; right: 140px; animation-delay: 1.4s; }
+.hottub-scene .hs7 { top: 92px; right: 70px; animation-delay: 1.8s; }
+.hottub-scene .hs8 { top: 48px; right: 22px; animation-delay: 2.1s; }
+
+.hottub-text {
+  margin: 0;
+  position: absolute;
+  top: 68px;
+  left: 28px;
+  color: #f3f9ff;
+  font-size: clamp(1.9rem, 4.2vw, 2.6rem);
+  line-height: 1.05;
+  font-family: "Fraunces", serif;
+  font-style: italic;
+  letter-spacing: 0.02em;
+}
+
+.tub {
+  position: absolute;
+  left: 28px;
+  right: 28px;
+  bottom: 18px;
+  height: 160px;
+  border-radius: 80px / 26px;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #9d6f4b 0 18px,
+      #ad7e58 18px 36px
+    );
+  border: 3px solid #8f6442;
+  box-shadow: inset 0 -12px 22px rgba(85, 50, 25, 0.35);
+}
+
+.tub .rim {
+  position: absolute;
+  left: -3px;
+  right: -3px;
+  top: -9px;
+  height: 14px;
+  border-radius: 70px / 10px;
+  background: #b18563;
+  border: 2px solid #8f6442;
+}
+
+.tub .water {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  top: 6px;
+  height: 84px;
+  border-radius: 60px / 22px;
+  background:
+    radial-gradient(circle at 18% 20%, rgba(255, 255, 255, 0.5) 0 8px, transparent 9px),
+    radial-gradient(circle at 72% 30%, rgba(255, 255, 255, 0.32) 0 8px, transparent 9px),
+    linear-gradient(180deg, #baf0ff 0%, #8fd6ee 70%, #7fc6e1 100%);
+  border: 2px solid rgba(164, 228, 249, 0.9);
+}
+
+.tub .band {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 7px;
+  background: #9ea3a8;
+}
+
+.tub .b1 { top: 98px; }
+.tub .b2 { top: 128px; }
+
+.tub .tub-heart {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  transform: rotate(-45deg);
+  border-radius: 3px;
+  background: #ea4f73;
+  box-shadow: 0 0 6px rgba(234, 79, 115, 0.45);
+}
+
+.tub .tub-heart::before,
+.tub .tub-heart::after {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: inherit;
+}
+
+.tub .tub-heart::before {
+  top: -7px;
+  left: 0;
+}
+
+.tub .tub-heart::after {
+  top: 0;
+  left: 7px;
+}
+
+.tub .th1 {
+  left: 62px;
+  bottom: 22px;
+}
+
+.tub .th2 {
+  left: 88px;
+  bottom: 40px;
 }
 
 .pickleball-line {
@@ -835,6 +1041,13 @@ h2 {
   color: #202830;
   border: 1px solid rgba(63, 75, 86, 0.3);
 }
+.c9 {
+  background:
+    radial-gradient(circle at 78% 22%, #f1f6ff 0 10px, transparent 11px),
+    linear-gradient(180deg, #10243a 0 68%, #875d3f 69% 100%);
+  color: #e7f4ff;
+  border: 1px solid rgba(177, 211, 240, 0.35);
+}
 
 @keyframes spin {
   from { transform: rotate(0deg); }
@@ -877,6 +1090,11 @@ h2 {
   50% { transform: translate(-50%, -50%) translateY(-5px); }
 }
 
+@keyframes hottubTwinkle {
+  0%, 100% { opacity: 0.55; transform: rotate(45deg) scale(0.9); }
+  50% { opacity: 1; transform: rotate(45deg) scale(1.2); }
+}
+
 
 @media (max-width: 900px) {
   .cards-grid {
@@ -914,6 +1132,10 @@ h2 {
     min-height: 300px;
   }
 
+  .card-detail.theme-hottub .hottub-scene {
+    min-height: 320px;
+  }
+
   .gym-sub {
     top: 172px;
     font-size: clamp(1.5rem, 6.3vw, 2rem);
@@ -931,6 +1153,18 @@ h2 {
     bottom: 6px;
     transform: scale(0.82);
     transform-origin: right bottom;
+  }
+
+  .hottub-text {
+    top: 72px;
+    left: 16px;
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+
+  .tub {
+    left: 10px;
+    right: 10px;
+    height: 142px;
   }
 
   .paddle {

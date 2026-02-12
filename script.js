@@ -11,6 +11,7 @@ const detailMessage = document.getElementById("detailMessage");
 const vaderScene = document.getElementById("vaderScene");
 const pickleballScene = document.getElementById("pickleballScene");
 const gymScene = document.getElementById("gymScene");
+const hottubScene = document.getElementById("hottubScene");
 const paper = document.querySelector(".paper");
 const stamp = document.querySelector(".stamp");
 const orbit = document.querySelector(".orbit");
@@ -72,6 +73,11 @@ const cardData = {
     message: "Happy Valentine's Day to my swolemate.",
     theme: "theme-gym",
   },
+  hottub: {
+    title: "Hot Tub Valentine",
+    message: "Hot together.",
+    theme: "theme-hottub",
+  },
 };
 
 const showCardDetail = (cardKey) => {
@@ -79,7 +85,7 @@ const showCardDetail = (cardKey) => {
     return;
   }
 
-  const themeClasses = ["theme-starwars", "theme-pickleball", "theme-gym"];
+  const themeClasses = ["theme-starwars", "theme-pickleball", "theme-gym", "theme-hottub"];
   cardDetail.classList.remove(...themeClasses);
 
   const selectedCard = cardData[cardKey] || cardData.starwars;
@@ -93,9 +99,11 @@ const showCardDetail = (cardKey) => {
   const isStarwars = selectedCard.theme === "theme-starwars";
   const isPickleball = selectedCard.theme === "theme-pickleball";
   const isGym = selectedCard.theme === "theme-gym";
+  const isHottub = selectedCard.theme === "theme-hottub";
   vaderScene?.setAttribute("aria-hidden", String(!isStarwars));
   pickleballScene?.setAttribute("aria-hidden", String(!isPickleball));
   gymScene?.setAttribute("aria-hidden", String(!isGym));
+  hottubScene?.setAttribute("aria-hidden", String(!isHottub));
 
   cardsView.classList.add("show-detail");
   cardDetail.setAttribute("aria-hidden", "false");
@@ -111,6 +119,7 @@ const showCardOptions = () => {
   vaderScene?.setAttribute("aria-hidden", "true");
   pickleballScene?.setAttribute("aria-hidden", "true");
   gymScene?.setAttribute("aria-hidden", "true");
+  hottubScene?.setAttribute("aria-hidden", "true");
 };
 
 if (openCardsButton) {
