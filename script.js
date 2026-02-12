@@ -18,7 +18,7 @@ const paper = document.querySelector(".paper");
 const stamp = document.querySelector(".stamp");
 const orbit = document.querySelector(".orbit");
 const flowerAnimationElements = document.querySelectorAll(
-  ".flower-garden .flower, .flower-garden .stem, .flower-garden .leaf, .flower-garden .bloom, .flower-garden .petal, .flower-garden .center",
+  ".flower-garden .flower, .flower-garden .stem, .flower-garden .leaf, .flower-garden .bloom, .flower-garden .petal, .flower-garden .center, .flower-garden .grass, .flower-garden .sprig",
 );
 
 const restartAnimation = () => {
