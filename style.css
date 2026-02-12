@@ -376,6 +376,7 @@ h2 {
 .scene.show-cards .card-option:nth-child(2) { animation-delay: 0.05s; }
 .scene.show-cards .card-option:nth-child(3) { animation-delay: 0.1s; }
 .scene.show-cards .card-option:nth-child(4) { animation-delay: 0.15s; }
+.scene.show-cards .card-option:nth-child(5) { animation-delay: 0.2s; }
 
 .card-detail {
   display: none;
@@ -495,6 +496,22 @@ h2 {
   color: rgba(240, 248, 255, 0.94);
 }
 
+.card-detail.theme-soccer {
+  background: linear-gradient(170deg, #2f6f3f 0%, #2f8a49 100%);
+  border-color: rgba(214, 241, 220, 0.28);
+  color: #f2fff4;
+}
+
+.card-detail.theme-soccer h3 {
+  color: #e7ffe9;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.card-detail.theme-soccer #detailMessage {
+  color: rgba(242, 255, 244, 0.94);
+}
+
 .pickleball-scene {
   display: none;
 }
@@ -504,6 +521,10 @@ h2 {
 }
 
 .hottub-scene {
+  display: none;
+}
+
+.soccer-scene {
   display: none;
 }
 
@@ -542,6 +563,69 @@ h2 {
     radial-gradient(circle at 80% 85%, rgba(22, 116, 162, 0.45), transparent 45%),
     linear-gradient(180deg, #12263b 0%, #133d60 100%);
   display: block;
+}
+
+.card-detail.theme-soccer .soccer-scene {
+  margin-top: 20px;
+  min-height: 360px;
+  border-radius: 16px;
+  border: 2px solid rgba(221, 248, 225, 0.28);
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% -20%, rgba(255, 255, 255, 0.22), transparent 48%),
+    linear-gradient(180deg, #2f6f3f 0%, #2f8a49 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 24px 20px 18px;
+}
+
+.soccer-line {
+  margin: 0;
+  position: static;
+  transform: none;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ecf7eb;
+  font-family: "Work Sans", sans-serif;
+  letter-spacing: 0.03em;
+  font-weight: 500;
+  line-height: 1.06;
+}
+
+.soccer-line.s-top {
+  font-size: clamp(1.55rem, 3.2vw, 2.1rem);
+}
+
+.soccer-line.s-mid1 {
+  font-size: clamp(1.55rem, 3.2vw, 2.1rem);
+}
+
+.soccer-line.s-mid2 {
+  font-size: clamp(1.65rem, 3.45vw, 2.3rem);
+}
+
+.soccer-line.s-bottom {
+  font-size: clamp(1.75rem, 3.65vw, 2.4rem);
+}
+
+.soccer-ball {
+  --soccer-ball-size: 100px;
+  background: url("https://upload.wikimedia.org/wikipedia/en/e/ec/Soccer_ball.svg");
+  background-size: var(--soccer-ball-size) var(--soccer-ball-size);
+  background-repeat: no-repeat;
+  height: var(--soccer-ball-size);
+  width: var(--soccer-ball-size);
+  position: relative;
+  align-self: flex-start;
+  left: 0;
+  margin-top: 16px;
+  -webkit-animation: roll 4.5s infinite;
+  -moz-animation: roll 4.5s infinite;
+  animation: roll 4.5s infinite;
 }
 
 .gym-heart {
@@ -1048,6 +1132,13 @@ h2 {
   color: #e7f4ff;
   border: 1px solid rgba(177, 211, 240, 0.35);
 }
+.c10 {
+  background:
+    radial-gradient(circle at 50% 74%, #ffffff 0 16px, #d7dadc 17px 20px, transparent 21px),
+    linear-gradient(180deg, #2f6f3f 0%, #2f8a49 100%);
+  color: #f1fff3;
+  border: 1px solid rgba(210, 238, 214, 0.32);
+}
 
 @keyframes spin {
   from { transform: rotate(0deg); }
@@ -1087,12 +1178,30 @@ h2 {
 
 @keyframes pickleballBob {
   0%, 100% { transform: translate(-50%, -50%) translateY(0); }
-  50% { transform: translate(-50%, -50%) translateY(-5px); }
+  50% { transform: translate(-50%, -50%) translateY(-12px); }
 }
 
 @keyframes hottubTwinkle {
   0%, 100% { opacity: 0.55; transform: rotate(45deg) scale(0.9); }
   50% { opacity: 1; transform: rotate(45deg) scale(1.2); }
+}
+
+@-moz-keyframes roll {
+  0% { left: 0; -webkit-transform: rotate(-360deg); transform: rotate(-360deg); }
+  50% { left: calc(100% - var(--soccer-ball-size) - 6px); -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+  100% { left: 0; -webkit-transform: rotate(-360deg); transform: rotate(-360deg); }
+}
+
+@-webkit-keyframes roll {
+  0% { left: 0; -webkit-transform: rotate(-360deg); transform: rotate(-360deg); }
+  50% { left: calc(100% - var(--soccer-ball-size) - 6px); -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+  100% { left: 0; -webkit-transform: rotate(-360deg); transform: rotate(-360deg); }
+}
+
+@keyframes roll {
+  0% { left: 0; -webkit-transform: rotate(-360deg); transform: rotate(-360deg); }
+  50% { left: calc(100% - var(--soccer-ball-size) - 6px); -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+  100% { left: 0; -webkit-transform: rotate(-360deg); transform: rotate(-360deg); }
 }
 
 
@@ -1136,6 +1245,12 @@ h2 {
     min-height: 320px;
   }
 
+  .card-detail.theme-soccer .soccer-scene {
+    min-height: 320px;
+    padding: 18px 12px 14px;
+    gap: 6px;
+  }
+
   .gym-sub {
     top: 172px;
     font-size: clamp(1.5rem, 6.3vw, 2rem);
@@ -1165,6 +1280,16 @@ h2 {
     left: 10px;
     right: 10px;
     height: 142px;
+  }
+
+  .soccer-line.s-top { font-size: clamp(1.2rem, 5.3vw, 1.7rem); }
+  .soccer-line.s-mid1 { font-size: clamp(1.2rem, 5.3vw, 1.7rem); }
+  .soccer-line.s-mid2 { font-size: clamp(1.3rem, 5.8vw, 1.85rem); }
+  .soccer-line.s-bottom { font-size: clamp(1.4rem, 6.1vw, 2rem); }
+
+  .soccer-ball {
+    --soccer-ball-size: 82px;
+    margin-top: 8px;
   }
 
   .paddle {

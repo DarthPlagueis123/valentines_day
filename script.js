@@ -12,6 +12,7 @@ const vaderScene = document.getElementById("vaderScene");
 const pickleballScene = document.getElementById("pickleballScene");
 const gymScene = document.getElementById("gymScene");
 const hottubScene = document.getElementById("hottubScene");
+const soccerScene = document.getElementById("soccerScene");
 const paper = document.querySelector(".paper");
 const stamp = document.querySelector(".stamp");
 const orbit = document.querySelector(".orbit");
@@ -78,6 +79,11 @@ const cardData = {
     message: "Hot together.",
     theme: "theme-hottub",
   },
+  soccer: {
+    title: "Soccer Valentine",
+    message: "The field is green, the sky is blue, soccer is awesome and so are you!",
+    theme: "theme-soccer",
+  },
 };
 
 const showCardDetail = (cardKey) => {
@@ -85,7 +91,7 @@ const showCardDetail = (cardKey) => {
     return;
   }
 
-  const themeClasses = ["theme-starwars", "theme-pickleball", "theme-gym", "theme-hottub"];
+  const themeClasses = ["theme-starwars", "theme-pickleball", "theme-gym", "theme-hottub", "theme-soccer"];
   cardDetail.classList.remove(...themeClasses);
 
   const selectedCard = cardData[cardKey] || cardData.starwars;
@@ -100,10 +106,12 @@ const showCardDetail = (cardKey) => {
   const isPickleball = selectedCard.theme === "theme-pickleball";
   const isGym = selectedCard.theme === "theme-gym";
   const isHottub = selectedCard.theme === "theme-hottub";
+  const isSoccer = selectedCard.theme === "theme-soccer";
   vaderScene?.setAttribute("aria-hidden", String(!isStarwars));
   pickleballScene?.setAttribute("aria-hidden", String(!isPickleball));
   gymScene?.setAttribute("aria-hidden", String(!isGym));
   hottubScene?.setAttribute("aria-hidden", String(!isHottub));
+  soccerScene?.setAttribute("aria-hidden", String(!isSoccer));
 
   cardsView.classList.add("show-detail");
   cardDetail.setAttribute("aria-hidden", "false");
@@ -120,6 +128,7 @@ const showCardOptions = () => {
   pickleballScene?.setAttribute("aria-hidden", "true");
   gymScene?.setAttribute("aria-hidden", "true");
   hottubScene?.setAttribute("aria-hidden", "true");
+  soccerScene?.setAttribute("aria-hidden", "true");
 };
 
 if (openCardsButton) {
