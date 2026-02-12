@@ -17,9 +17,17 @@ const hikingScene = document.getElementById("hikingScene");
 const paper = document.querySelector(".paper");
 const stamp = document.querySelector(".stamp");
 const orbit = document.querySelector(".orbit");
+const flowerAnimationElements = document.querySelectorAll(
+  ".flower-garden .flower, .flower-garden .stem, .flower-garden .leaf, .flower-garden .bloom, .flower-garden .petal, .flower-garden .center",
+);
 
 const restartAnimation = () => {
-  const animatedElements = [paper, stamp, orbit].filter(Boolean);
+  const animatedElements = [
+    paper,
+    stamp,
+    orbit,
+    ...Array.from(flowerAnimationElements),
+  ].filter(Boolean);
 
   animatedElements.forEach((element) => {
     element.style.animation = "none";
