@@ -10,6 +10,7 @@ const detailTitle = document.getElementById("detailTitle");
 const detailMessage = document.getElementById("detailMessage");
 const vaderScene = document.getElementById("vaderScene");
 const pickleballScene = document.getElementById("pickleballScene");
+const gymScene = document.getElementById("gymScene");
 const paper = document.querySelector(".paper");
 const stamp = document.querySelector(".stamp");
 const orbit = document.querySelector(".orbit");
@@ -66,6 +67,11 @@ const cardData = {
     message: "I dink you're the best, Valentine!",
     theme: "theme-pickleball",
   },
+  gym: {
+    title: "Gym Valentine",
+    message: "Happy Valentine's Day to my swolemate.",
+    theme: "theme-gym",
+  },
 };
 
 const showCardDetail = (cardKey) => {
@@ -73,7 +79,7 @@ const showCardDetail = (cardKey) => {
     return;
   }
 
-  const themeClasses = ["theme-starwars", "theme-pickleball"];
+  const themeClasses = ["theme-starwars", "theme-pickleball", "theme-gym"];
   cardDetail.classList.remove(...themeClasses);
 
   const selectedCard = cardData[cardKey] || cardData.starwars;
@@ -86,8 +92,10 @@ const showCardDetail = (cardKey) => {
 
   const isStarwars = selectedCard.theme === "theme-starwars";
   const isPickleball = selectedCard.theme === "theme-pickleball";
+  const isGym = selectedCard.theme === "theme-gym";
   vaderScene?.setAttribute("aria-hidden", String(!isStarwars));
   pickleballScene?.setAttribute("aria-hidden", String(!isPickleball));
+  gymScene?.setAttribute("aria-hidden", String(!isGym));
 
   cardsView.classList.add("show-detail");
   cardDetail.setAttribute("aria-hidden", "false");
@@ -102,6 +110,7 @@ const showCardOptions = () => {
   cardDetail.setAttribute("aria-hidden", "true");
   vaderScene?.setAttribute("aria-hidden", "true");
   pickleballScene?.setAttribute("aria-hidden", "true");
+  gymScene?.setAttribute("aria-hidden", "true");
 };
 
 if (openCardsButton) {

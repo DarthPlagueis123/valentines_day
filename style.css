@@ -374,6 +374,7 @@ h2 {
 }
 
 .scene.show-cards .card-option:nth-child(2) { animation-delay: 0.05s; }
+.scene.show-cards .card-option:nth-child(3) { animation-delay: 0.1s; }
 
 .card-detail {
   display: none;
@@ -461,7 +462,27 @@ h2 {
   font-weight: 500;
 }
 
+.card-detail.theme-gym {
+  background: linear-gradient(170deg, #f7f7f7 0%, #ececec 100%);
+  border-color: rgba(35, 35, 35, 0.2);
+  color: #1b1d22;
+}
+
+.card-detail.theme-gym h3 {
+  color: #e55578;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.card-detail.theme-gym #detailMessage {
+  color: #2a2c33;
+}
+
 .pickleball-scene {
+  display: none;
+}
+
+.gym-scene {
   display: none;
 }
 
@@ -475,6 +496,176 @@ h2 {
   background: linear-gradient(180deg, #f8f9fa 0%, #f0f2f2 100%);
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.85);
   display: block;
+}
+
+.card-detail.theme-gym .gym-scene {
+  margin-top: 20px;
+  min-height: 340px;
+  border-radius: 14px;
+  border: 2px solid #dedede;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #fbfbfb 0%, #f2f2f2 100%);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.9);
+  display: block;
+}
+
+.gym-heart {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  transform: translateX(-50%) rotate(-45deg);
+  border-radius: 2px;
+  background: #ea597c;
+}
+
+.gym-heart::before,
+.gym-heart::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: inherit;
+}
+
+.gym-heart::before {
+  top: -6px;
+  left: 0;
+}
+
+.gym-heart::after {
+  top: 0;
+  left: 6px;
+}
+
+.gym-line {
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-transform: uppercase;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  color: #eb5f80;
+  letter-spacing: 0.03em;
+  -webkit-text-stroke: 1px #5d2533;
+}
+
+.gym-line.top {
+  top: 28px;
+  font-size: clamp(2.1rem, 4.3vw, 2.9rem);
+}
+
+.gym-line.middle {
+  top: 76px;
+  font-size: clamp(2.2rem, 4.8vw, 3rem);
+}
+
+.gym-line.bottom {
+  top: 126px;
+  font-size: clamp(2.2rem, 4.8vw, 3.1rem);
+}
+
+.gym-sub {
+  margin: 0;
+  position: absolute;
+  top: 178px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: clamp(1.9rem, 4.2vw, 2.5rem);
+  font-family: "Courier New", Courier, monospace;
+  color: #1f2228;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.gym-sub span {
+  letter-spacing: 0.03em;
+}
+
+.dumbbell {
+  position: absolute;
+  left: 92px;
+  bottom: 16px;
+  width: 266px;
+  height: 112px;
+  transform: rotate(8deg);
+}
+
+.dumbbell .bar {
+  position: absolute;
+  left: 78px;
+  right: 78px;
+  top: 46px;
+  height: 18px;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #f0f0f0, #c8c8c8);
+  border: 2px solid #8d8d8d;
+}
+
+.dumbbell .plate {
+  position: absolute;
+  top: 16px;
+  width: 56px;
+  height: 80px;
+  border-radius: 22px;
+  background: #f3a8bb;
+  border: 2px solid #7f4c5a;
+}
+
+.dumbbell .plate::after {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border-radius: 14px;
+  border: 2px solid rgba(90, 43, 58, 0.45);
+}
+
+.dumbbell .p1 { left: 0; }
+.dumbbell .p2 { left: 34px; }
+.dumbbell .p3 { right: 34px; }
+.dumbbell .p4 { right: 0; }
+
+.kettlebell {
+  position: absolute;
+  right: 82px;
+  bottom: 12px;
+  width: 130px;
+  height: 130px;
+}
+
+.kettlebell .kb-handle {
+  position: absolute;
+  left: 18px;
+  top: 0;
+  width: 96px;
+  height: 62px;
+  border: 14px solid #292929;
+  border-bottom: 0;
+  border-radius: 40px 40px 0 0;
+}
+
+.kettlebell .kb-body {
+  position: absolute;
+  left: 12px;
+  bottom: 0;
+  width: 106px;
+  height: 82px;
+  border-radius: 52px;
+  background: #ef5578;
+  border: 2px solid #702638;
+}
+
+.kettlebell .kb-face {
+  position: absolute;
+  left: 44px;
+  bottom: 34px;
+  width: 42px;
+  height: 20px;
+  border-bottom: 3px solid #7e2438;
+  border-radius: 0 0 20px 20px;
 }
 
 .pickleball-line {
@@ -637,6 +828,13 @@ h2 {
     linear-gradient(145deg, #eef2f1, #dce8e7);
   color: #1b3436;
 }
+.c8 {
+  background:
+    linear-gradient(90deg, transparent 34%, #2f3740 35% 65%, transparent 66%),
+    linear-gradient(145deg, #edf0f2, #d9dde2);
+  color: #202830;
+  border: 1px solid rgba(63, 75, 86, 0.3);
+}
 
 @keyframes spin {
   from { transform: rotate(0deg); }
@@ -710,6 +908,29 @@ h2 {
 
   .card-detail.theme-pickleball .pickleball-scene {
     min-height: 280px;
+  }
+
+  .card-detail.theme-gym .gym-scene {
+    min-height: 300px;
+  }
+
+  .gym-sub {
+    top: 172px;
+    font-size: clamp(1.5rem, 6.3vw, 2rem);
+  }
+
+  .dumbbell {
+    left: 8px;
+    bottom: 8px;
+    transform: rotate(6deg) scale(0.82);
+    transform-origin: left bottom;
+  }
+
+  .kettlebell {
+    right: 8px;
+    bottom: 6px;
+    transform: scale(0.82);
+    transform-origin: right bottom;
   }
 
   .paddle {
