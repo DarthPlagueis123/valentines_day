@@ -377,6 +377,7 @@ h2 {
 .scene.show-cards .card-option:nth-child(3) { animation-delay: 0.1s; }
 .scene.show-cards .card-option:nth-child(4) { animation-delay: 0.15s; }
 .scene.show-cards .card-option:nth-child(5) { animation-delay: 0.2s; }
+.scene.show-cards .card-option:nth-child(6) { animation-delay: 0.25s; }
 
 .card-detail {
   display: none;
@@ -512,6 +513,22 @@ h2 {
   color: rgba(242, 255, 244, 0.94);
 }
 
+.card-detail.theme-hiking {
+  background: linear-gradient(170deg, #f3f3f3 0%, #e8e8e8 100%);
+  border-color: rgba(111, 152, 119, 0.32);
+  color: #1f2723;
+}
+
+.card-detail.theme-hiking h3 {
+  color: #2f5f3d;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.card-detail.theme-hiking #detailMessage {
+  color: #2d3932;
+}
+
 .pickleball-scene {
   display: none;
 }
@@ -525,6 +542,10 @@ h2 {
 }
 
 .soccer-scene {
+  display: none;
+}
+
+.hiking-scene {
   display: none;
 }
 
@@ -580,6 +601,127 @@ h2 {
   align-items: center;
   gap: 8px;
   padding: 24px 20px 18px;
+}
+
+.card-detail.theme-hiking .hiking-scene {
+  margin-top: 20px;
+  min-height: 380px;
+  border-radius: 16px;
+  border: 2px solid rgba(149, 186, 157, 0.35);
+  position: relative;
+  overflow: hidden;
+  background: #efefef;
+  display: block;
+}
+
+.hike-blob {
+  position: absolute;
+  width: 230px;
+  height: 170px;
+  left: 50%;
+  top: 30px;
+  transform: translateX(-50%) rotate(-8deg);
+  border-radius: 40% 54% 48% 44% / 44% 45% 52% 46%;
+  background: #a8dcb0;
+}
+
+.hike-pole {
+  position: absolute;
+  width: 6px;
+  height: 210px;
+  top: 34px;
+  left: 50%;
+  background: linear-gradient(180deg, #aeb3b5, #4f585d);
+  border-radius: 6px;
+  transform-origin: top center;
+}
+
+.hike-pole.left {
+  transform: translateX(-50%) rotate(26deg);
+}
+
+.hike-pole.right {
+  transform: translateX(-50%) rotate(-26deg);
+}
+
+.hike-pole .grip {
+  position: absolute;
+  width: 14px;
+  height: 34px;
+  top: -8px;
+  left: -4px;
+  border-radius: 7px;
+  background: #f0f0f0;
+  border: 1px solid #9ea4a8;
+}
+
+.hike-pole .strap {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: -2px;
+  left: -6px;
+  border: 2px solid #7f8589;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-radius: 50%;
+}
+
+.hike-pole .joint {
+  position: absolute;
+  left: -2px;
+  width: 10px;
+  height: 4px;
+  border-radius: 2px;
+  background: #2f353a;
+}
+
+.hike-pole .joint.j1 { top: 98px; }
+.hike-pole .joint.j2 { top: 146px; }
+
+.hike-pole .tip {
+  position: absolute;
+  width: 8px;
+  height: 14px;
+  left: -1px;
+  bottom: -10px;
+  clip-path: polygon(50% 100%, 0 0, 100% 0);
+  background: #1f2326;
+}
+
+.hiking-line {
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 42px);
+  text-align: center;
+  text-transform: uppercase;
+  color: #252e29;
+  font-family: "Work Sans", sans-serif;
+  letter-spacing: 0.03em;
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.hiking-line.hl1 {
+  bottom: 112px;
+  font-size: clamp(1.4rem, 2.8vw, 1.95rem);
+}
+
+.hiking-line.hl2 {
+  bottom: 82px;
+  font-size: clamp(1.4rem, 2.8vw, 1.95rem);
+}
+
+.hiking-line.hl3 {
+  bottom: 50px;
+  font-size: clamp(1.4rem, 2.8vw, 1.95rem);
+}
+
+.hiking-line.hl4 {
+  bottom: 20px;
+  font-size: clamp(1.4rem, 2.8vw, 1.95rem);
 }
 
 .soccer-line {
@@ -1139,6 +1281,15 @@ h2 {
   color: #f1fff3;
   border: 1px solid rgba(210, 238, 214, 0.32);
 }
+.c11 {
+  background:
+    linear-gradient(135deg, transparent 47%, #5a6468 48% 52%, transparent 53%),
+    linear-gradient(45deg, transparent 47%, #5a6468 48% 52%, transparent 53%),
+    radial-gradient(circle at 50% 40%, #a8dcb0 0 30%, transparent 31%),
+    linear-gradient(145deg, #efefef, #dddddd);
+  color: #203128;
+  border: 1px solid rgba(91, 127, 100, 0.3);
+}
 
 @keyframes spin {
   from { transform: rotate(0deg); }
@@ -1251,6 +1402,10 @@ h2 {
     gap: 6px;
   }
 
+  .card-detail.theme-hiking .hiking-scene {
+    min-height: 340px;
+  }
+
   .gym-sub {
     top: 172px;
     font-size: clamp(1.5rem, 6.3vw, 2rem);
@@ -1291,6 +1446,26 @@ h2 {
     --soccer-ball-size: 82px;
     margin-top: 8px;
   }
+
+  .hike-blob {
+    width: 180px;
+    height: 136px;
+    top: 30px;
+  }
+
+  .hike-pole {
+    height: 176px;
+    top: 36px;
+  }
+
+  .hiking-line {
+    width: calc(100% - 24px);
+  }
+
+  .hiking-line.hl1 { bottom: 98px; font-size: clamp(1.1rem, 4.5vw, 1.5rem); }
+  .hiking-line.hl2 { bottom: 72px; font-size: clamp(1.1rem, 4.5vw, 1.5rem); }
+  .hiking-line.hl3 { bottom: 44px; font-size: clamp(1.1rem, 4.5vw, 1.5rem); }
+  .hiking-line.hl4 { bottom: 18px; font-size: clamp(1.1rem, 4.5vw, 1.5rem); }
 
   .paddle {
     width: 84px;

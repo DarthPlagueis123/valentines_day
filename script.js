@@ -13,6 +13,7 @@ const pickleballScene = document.getElementById("pickleballScene");
 const gymScene = document.getElementById("gymScene");
 const hottubScene = document.getElementById("hottubScene");
 const soccerScene = document.getElementById("soccerScene");
+const hikingScene = document.getElementById("hikingScene");
 const paper = document.querySelector(".paper");
 const stamp = document.querySelector(".stamp");
 const orbit = document.querySelector(".orbit");
@@ -84,6 +85,11 @@ const cardData = {
     message: "The field is green, the sky is blue, soccer is awesome and so are you!",
     theme: "theme-soccer",
   },
+  hiking: {
+    title: "Hiking Valentine",
+    message: "Uphills are strenuous, summits aren't always true, but I'd climb any mountain to spend time with you.",
+    theme: "theme-hiking",
+  },
 };
 
 const showCardDetail = (cardKey) => {
@@ -91,7 +97,7 @@ const showCardDetail = (cardKey) => {
     return;
   }
 
-  const themeClasses = ["theme-starwars", "theme-pickleball", "theme-gym", "theme-hottub", "theme-soccer"];
+  const themeClasses = ["theme-starwars", "theme-pickleball", "theme-gym", "theme-hottub", "theme-soccer", "theme-hiking"];
   cardDetail.classList.remove(...themeClasses);
 
   const selectedCard = cardData[cardKey] || cardData.starwars;
@@ -107,11 +113,13 @@ const showCardDetail = (cardKey) => {
   const isGym = selectedCard.theme === "theme-gym";
   const isHottub = selectedCard.theme === "theme-hottub";
   const isSoccer = selectedCard.theme === "theme-soccer";
+  const isHiking = selectedCard.theme === "theme-hiking";
   vaderScene?.setAttribute("aria-hidden", String(!isStarwars));
   pickleballScene?.setAttribute("aria-hidden", String(!isPickleball));
   gymScene?.setAttribute("aria-hidden", String(!isGym));
   hottubScene?.setAttribute("aria-hidden", String(!isHottub));
   soccerScene?.setAttribute("aria-hidden", String(!isSoccer));
+  hikingScene?.setAttribute("aria-hidden", String(!isHiking));
 
   cardsView.classList.add("show-detail");
   cardDetail.setAttribute("aria-hidden", "false");
@@ -129,6 +137,7 @@ const showCardOptions = () => {
   gymScene?.setAttribute("aria-hidden", "true");
   hottubScene?.setAttribute("aria-hidden", "true");
   soccerScene?.setAttribute("aria-hidden", "true");
+  hikingScene?.setAttribute("aria-hidden", "true");
 };
 
 if (openCardsButton) {
