@@ -8,6 +8,8 @@ const cardsView = document.getElementById("cardsView");
 const cardDetail = document.getElementById("cardDetail");
 const detailTitle = document.getElementById("detailTitle");
 const detailMessage = document.getElementById("detailMessage");
+const vaderScene = document.getElementById("vaderScene");
+const pickleballScene = document.getElementById("pickleballScene");
 const paper = document.querySelector(".paper");
 const stamp = document.querySelector(".stamp");
 const orbit = document.querySelector(".orbit");
@@ -59,30 +61,10 @@ const cardData = {
     message: "Together we can rule the galaxy!",
     theme: "theme-starwars",
   },
-  sweet: {
-    title: "Sweet",
-    message: "Your full Valentine card content for this style will go here.",
-    theme: "",
-  },
-  playful: {
-    title: "Playful",
-    message: "Your full Valentine card content for this style will go here.",
-    theme: "",
-  },
-  warm: {
-    title: "Warm",
-    message: "Your full Valentine card content for this style will go here.",
-    theme: "",
-  },
-  poetic: {
-    title: "Poetic",
-    message: "Your full Valentine card content for this style will go here.",
-    theme: "",
-  },
-  forever: {
-    title: "Forever",
-    message: "Your full Valentine card content for this style will go here.",
-    theme: "",
+  pickleball: {
+    title: "Pickleball Valentine",
+    message: "I dink you're the best, Valentine!",
+    theme: "theme-pickleball",
   },
 };
 
@@ -91,16 +73,21 @@ const showCardDetail = (cardKey) => {
     return;
   }
 
-  const themeClasses = ["theme-starwars"];
+  const themeClasses = ["theme-starwars", "theme-pickleball"];
   cardDetail.classList.remove(...themeClasses);
 
-  const selectedCard = cardData[cardKey] || cardData.sweet;
+  const selectedCard = cardData[cardKey] || cardData.starwars;
   detailTitle.textContent = selectedCard.title;
   detailMessage.textContent = selectedCard.message;
 
   if (selectedCard.theme) {
     cardDetail.classList.add(selectedCard.theme);
   }
+
+  const isStarwars = selectedCard.theme === "theme-starwars";
+  const isPickleball = selectedCard.theme === "theme-pickleball";
+  vaderScene?.setAttribute("aria-hidden", String(!isStarwars));
+  pickleballScene?.setAttribute("aria-hidden", String(!isPickleball));
 
   cardsView.classList.add("show-detail");
   cardDetail.setAttribute("aria-hidden", "false");
@@ -113,6 +100,8 @@ const showCardOptions = () => {
 
   cardsView.classList.remove("show-detail");
   cardDetail.setAttribute("aria-hidden", "true");
+  vaderScene?.setAttribute("aria-hidden", "true");
+  pickleballScene?.setAttribute("aria-hidden", "true");
 };
 
 if (openCardsButton) {
@@ -129,7 +118,7 @@ if (backToOptionsButton) {
 
 cardOptionButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    const cardKey = button.dataset.cardKey || "sweet";
+    const cardKey = button.dataset.cardKey || "starwars";
     showCardDetail(cardKey);
   });
 });
